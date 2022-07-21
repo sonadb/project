@@ -1,0 +1,73 @@
+<!-- Main Section -->
+<section id="main-section">
+  <!-- Moto-Animation -->
+  <div id="animi">
+    <p id="moto_an">&lt;/&gt;welcome to online shop</p>
+  </div>
+
+  <!-- Slide-Show Animation -->
+  <div class="wrapper">
+    <div
+      style="
+        border-radius: 5px;
+        background-image: url(https://png.pngtree.com/back_origin_pic/03/65/01/3bc3dbe72018ecfe76f0699405309178.jpg);
+      "
+    ></div>
+    <div
+      style="
+        border-radius: 5px;
+        background-image: url(https://th.bing.com/th/id/R.7573ff1dac054a0d6c36040acf4171dd?rik=HEtOSVzsXB4v4Q&riu=http%3a%2f%2feskipaper.com%2fimages%2fshopping-wallpaper-hd-1.jpg&ehk=WrBp0nrOb1HFCZwxPlSkMIC1gks5TSMWpkLd2RElMQ4%3d&risl=&pid=ImgRaw&r=0);
+      "
+    ></div>
+    <div
+      style="
+        border-radius: 5px;
+        background-image: url(https://besthqwallpapers.com/img/original/122727/online-shopping-monochrome-online-business-concepts-online-store-concepts-laptop.jpg);
+      "
+    ></div>
+    <div
+      style="
+        border-radius: 5px;
+        background-image: url(https://wallpapercave.com/wp/wp7566498.jpg);
+      "
+    ></div>
+    <div
+      style="
+        border-radius: 5px;
+        background-image: url(https://wallpaperaccess.com/full/2484120.jpg);
+      "
+    ></div>
+  </div>
+
+  <!-- Slide-Show Ends -->
+
+<br>
+
+<main >
+ <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+
+
+  <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+
+
+
+    <div class="col" *ngFor="let dt of result">
+          <div  class="card shadow-sm">
+            <img src="../../../assets/Images/{{dt.productImage}}" class="card-img-top" alt="...">
+            <div class="card-body"> <div class="clearfix mb-3">
+          <span class="float-start badge rounded-pill bg-primary">{{dt.productName}}</span>
+          <span class="float-end price-hp">&#8377; {{dt. productPrice}}</span>
+        </div>
+        <h5 class="card-title">{{dt.productDiscription}}</h5>
+        <div class="text-center my-4"><button class="btn btn-warning" (click)=addtocart(dt) > Add to cart </button> </div>
+          </div>
+      </div>
+      </div>
+  
+</div>
+</div>
+</main>
+
+
+
+</section>
