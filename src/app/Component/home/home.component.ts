@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Productd } from '../../Interface/productd';
 import { ProductServiceService  } from '../../Services/product-service.service';
 import { CartServiceService} from '../../Services/cart-service.service';
+import { Data } from '@angular/router';
 
 
 @Component({
@@ -11,29 +12,56 @@ import { CartServiceService} from '../../Services/cart-service.service';
 })
 export class HomeComponent implements OnInit {
   result:Productd[]=[];
-
+  searchKey:string='';
+  filterKey:string='productName';
+  public filterCategory:boolean=false;
 
   constructor(private order:ProductServiceService, private cartService: CartServiceService) { }
 
   ngOnInit(): void {
 
-    this.order.getData().subscribe((data:Productd[])=>
+    this.order.getData().subscribe((data)=>
     {
+      for(var i=0;i<data.length;i++)
+      {
+        let item :Productd={
+          productId:data[i].productId,
+productName:data[i].productName,
+productPrice:data[i].productPrice,
+productDiscription:data[i].productDiscription,
+ProductQuantity:data[i]. ProductQuantity,
+productImage:data[i].productImage,
+productImage1:data[i].productImage1,
+productImage2:data[i].productImage2,
+productImage3:data[i].productImage3,
+productCategory:data[i].productCategory,
+tags:data[i].tags
 
-      console.log(data);
-      this.result=data;
 
 
-      //for cart
-      this.result.forEach((a:Productd)=>{
-        Object.assign(a,{quantity:1,total:a.productPrice})
-      })
+      };
+      this.result.push(item);
+      this.searchKey='';
+      this.filterKey='category';
+    }
 
     });
+
+    this.cartService.search.subscribe((val:string)=>{
+      this.searchKey=val;
+     this.filterKey='productName';
+    })
+    this.cartService.category.subscribe((val:string)=>{
+     this.searchKey=val;
+     this.filterKey='productName';
+    })
   }
-  addtocart(dt:any){
+  addtocart(dt:Productd){
     this.cartService.addtoCart(dt);
   }
+
+
+
 
 
 

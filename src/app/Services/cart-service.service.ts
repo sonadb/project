@@ -12,7 +12,9 @@ export class CartServiceService {
 
   public cartItemList:Productd[]=[]
   public productList=new BehaviorSubject<any>([]);
-  public search =new BehaviorSubject<string>("");
+  public search=new BehaviorSubject<string>("");
+  public category=new BehaviorSubject<any>("");
+  public filterCategory: any;
   http:any;
 
   constructor() { }
@@ -60,8 +62,6 @@ export class CartServiceService {
 
   }
 }
-
-
 
   removeAllCart()
   {

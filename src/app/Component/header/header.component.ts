@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CartServiceService } from '../../Services/cart-service.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,8 +9,8 @@ import {CartServiceService } from '../../Services/cart-service.service';
 export class HeaderComponent implements OnInit {
 
   public totalItem: number=0;
-  public searchterm:string='';
-  constructor (public cartService: CartServiceService) {
+  public searchItem:string='';
+  constructor (public cartService: CartServiceService ,private router :Router) {
 
   }
 
@@ -23,9 +24,14 @@ export class HeaderComponent implements OnInit {
   }
 
   search(event:any){
-    this.searchterm=(event.target as HTMLInputElement).value;
-    this.cartService.search.next(this.searchterm);
-    }
+    this.router.navigate([''])
+    this.searchItem=(event.target as HTMLInputElement).value;
+    this.cartService.search.next(this.searchItem);
+  }
+  filter(event:any){
+   this.router.navigate(['our-specials'])
+   this.cartService.category.next(event);
+  }
 
   }
 

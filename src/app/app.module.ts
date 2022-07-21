@@ -28,6 +28,8 @@ import { MessageService } from 'primeng/api';                           //img br
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 
+import { FilterPipe } from './Interface/filter.pipe';
+
 
 
 
@@ -45,6 +47,7 @@ import { MessageModule } from 'primeng/message';
     CheckoutComponent,
     LoginComponent,
     SignupComponent,
+    FilterPipe
 
 
   ],

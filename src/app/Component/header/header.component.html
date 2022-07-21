@@ -25,21 +25,30 @@
 			        </div>
 				</div>
 				<div class="col-lg-5 col-md-12 col-12">
-					<form action="#" class="">
-		              <div class="input-group">
-		                <input type="text" name="search" [(ngModel)]="searchterm" (keyup)="search($event)"  placeholder="search products here!" class="form-control" style="width:55%" >
 
-                    <select class="form-select">
-		                  <option value="">Go Here</option>
-		                  <option value="codex">Popular Trends</option>
-		                  <option value="comments">Shop Products</option>
-		                  <option value="content">New Arrivals</option>
-		                </select>
-		                <button class="btn btn-primary">
-		                  <i class="fa fa-search"></i>
-		                </button>
+		              <div class="input-group">
+		                <!-- <input type="text" name="search" [(ngModel)]="searchterm" (keyup)="search($event)"  placeholder="search products here!" class="form-control" style="width:55%" > -->
+                    <form class="form-inline my-2 my-lg-0">
+                      <input  type="search" id="search-input" name="search"  [(ngModel)]="searchItem" (keyup)="search($event)" class="form-control"  placeholder="Search food....."  aria-label="Search">
+                      </form>
+                      <div class="ddcategory">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Category
+                          </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                            <a class="dropdown-item" (click)="filter('STARTER')" routerLink="" routerLinkActive="link-active" value="STARTER">Starters</a>
+                            <a class="dropdown-item" (click)="filter('VEG')" routerLink="" routerLinkActive="link-active" value="VEG">Veg</a>
+                            <a class="dropdown-item" (click)="filter('BREAD')" routerLink="" routerLinkActive="link-active"  value="BREAD">Breads</a>
+                            <a class="dropdown-item" (click)="filter('ITALIAN')" routerLink="" routerLinkActive="link-active" value="ITALIAN">Italian</a>
+                            <a class="dropdown-item" (click)="filter('PIZZABURGER')" routerLink="" routerLinkActive="link-active" value="PIZZABURGER">Pizza and Burgers</a>
+                            <a class="dropdown-item" (click)="filter('SOUTH-INDIAN')"  routerLink="" routerLinkActive="link-active" value="SOUTH-INDIAN">South-Indian</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" (click)="filter('')" routerLink="" routerLinkActive="link-active" value="OUR-SPECIAL">Explore Taste</a>
+                          </div>
+                        </div>
+
 		              </div> <!-- input-group end.//  -->
-		            </form>
+
 				</div> <!-- col end.//  -->
 
 			</div> <!-- row end.//  -->

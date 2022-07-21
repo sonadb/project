@@ -51,7 +51,7 @@
 
 
 
-    <div class="col" *ngFor="let dt of result">
+    <div class="col" *ngFor="let dt of result | filter:searchKey:filterKey">
           <div  class="card shadow-sm">
             <img src="../../../assets/Images/{{dt.productImage}}" class="card-img-top" alt="...">
             <div class="card-body"> <div class="clearfix mb-3">
@@ -63,7 +63,7 @@
           </div>
       </div>
       </div>
-  
+
 </div>
 </div>
 </main>
